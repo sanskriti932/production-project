@@ -27,3 +27,10 @@ Route::middleware(['auth','isAdmin'])->group(function(){
         return "This is admin";
     });
 });
+
+
+Route::middleware(['auth','isCafeAdmin'])->group(function(){
+    Route::get('/cafedashboard',function(){
+        return "This is cafeadmin";
+    });
+});

@@ -31,7 +31,10 @@ class LoginController extends Controller
     {
         if(Auth::user()->role_as=='1')
         {
-            return redirect('dashboard')->with('status','Welcome to your dashboard!');
+            return redirect('dashboard')->with('status','Welcome to your admin dashboard!');
+        }else if(Auth::user()->role_as=='2')
+        {
+            return redirect('cafedashboard')->with('status','Welcome to your cafe dashboard!');
         }
         elseif(Auth::user()->role_as=='0')
         {
