@@ -31,6 +31,6 @@ Route::middleware(['auth','isAdmin'])->group(function(){
 
 Route::middleware(['auth','isCafeAdmin'])->group(function(){
     Route::get('/cafedashboard',function(){
-        return "This is cafeadmin";
+        return view('cafeadmin.index');
     });
 });
