@@ -31,10 +31,14 @@
         <i class="fas fa-user mr-3"></i>
         My Account
     </a>
-    <a href="#" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+    .<a href="{{ route('logout') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
         <i class="fas fa-sign-out-alt mr-3"></i>
-        Sign Out
+        {{ __('Logout') }}
     </a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
     <button class="w-full bg-white cta-btn font-semibold py-2 mt-3 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
         <i class="fas fa-arrow-circle-up mr-3"></i> Upgrade to Pro!
     </button>
