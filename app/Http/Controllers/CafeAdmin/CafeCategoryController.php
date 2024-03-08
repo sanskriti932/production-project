@@ -67,4 +67,16 @@ class CafeCategoryController extends Controller
         $category->update();
         return redirect('/cafedashboard')->with('status',"Cafe Category updated sucessfully!");
     }
+
+    public function destroy($id){
+        $category = CafeCategory::find($id);
+        if($category->image){
+            $path = 'assets/uploads/cafecategory'.$category->image;
+            if(File::exists($path)){
+                File::delete($path);
+            }
+        }
+        $category->delete();
+        return redirect('cafecategories')->with('status',"Category Deleted Successfully!");
+    }
 }
