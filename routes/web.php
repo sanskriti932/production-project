@@ -30,7 +30,8 @@ Route::middleware(['auth','isAdmin'])->group(function(){
 
 
 Route::middleware(['auth','isCafeAdmin'])->group(function(){
-    Route::get('/cafedashboard',function(){
-        return view('cafeadmin.index');
-    });
+    Route::get('/cafedashboard', [App\Http\Controllers\CafeAdmin\FrontendController::class, 'index']);
+    Route::get('cafecategories',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'index']);
+    Route::get('add-cafecategory',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'add']);
+    Route::post('insert-cafecategory',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'insert']);
 });
