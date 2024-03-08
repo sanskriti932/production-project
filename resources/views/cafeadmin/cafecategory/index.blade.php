@@ -29,9 +29,9 @@
                             </div>
                         </td>
                         <td class="border px-2 py-8 flex justify-center">
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded mr-4">
+                            <a href="{{url('edit-cafeproduct/'.$item->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded mr-4">
                                 Edit
-                            </button>
+                            </a>
                             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded">
                                 Delete
                             </button>

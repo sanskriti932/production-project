@@ -34,4 +34,6 @@ Route::middleware(['auth','isCafeAdmin'])->group(function(){
     Route::get('cafecategories',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'index']);
     Route::get('add-cafecategory',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'add']);
     Route::post('insert-cafecategory',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'insert']);
+    Route::get('edit-cafeproduct/{id}',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'edit']);
+    Route::put('update-cafecategory/{id}',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'update']);
 });
