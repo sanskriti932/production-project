@@ -1,8 +1,47 @@
 @extends('layouts.cafeadmin')
+
 @section('content')
 <div class="card">
+    <div class="card-header">
+        <h4 class="text-lg font-semibold">Category Page</h4>
+    </div>
     <div class="card-body">
-        <h1>Cafe Category</h1>
+        <div class="overflow-x-auto">
+            <table class="table-auto w-full bg-white shadow-md rounded-lg">
+                <thead class="bg-gray-200 text-gray-700">
+                    <tr>
+                        <th class="px-4 py-2">Id</th>
+                        <th class="px-4 py-2">Name</th>
+                        <th class="px-10 py-2">Description</th>
+                        <th class="px-2 py-2">Image</th>
+                        <th class="px-2 py-2">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600">
+                    @foreach ($category as $item)
+                    <tr class="hover:bg-gray-100">
+                        <td class="border px-4 py-2">{{$item->id}}</td>
+                        <td class="border px-4 py-2">{{$item->name}}</td>
+                        <td class="border px-10 py-2">{{$item->description}}</td>
+                        <td class="border px-2 py-2">
+                            <div class="flex justify-center">
+                                <img src="{{asset('assets/uploads/cafecategory/'.$item->image)}}" class="w-20" alt="Category Image here">
+                            </div>
+                        </td>
+                        <td class="border px-2 py-8 flex justify-center">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded mr-4">
+                                Edit
+                            </button>
+                            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded">
+                                Delete
+                            </button>
+                        </td>
+
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 @endsection

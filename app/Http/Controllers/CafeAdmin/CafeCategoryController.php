@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class CafeCategoryController extends Controller
 {
     public function index(){
-        return view('cafeadmin.cafecategory.index');
+        $category=CafeCategory::all();
+        return view('cafeadmin.cafecategory.index',compact('category'));
     }
 
     public function add(){
@@ -21,7 +22,7 @@ class CafeCategoryController extends Controller
             $file=$request->file('image');
             $ext=$file->getClientOriginalExtension();
             $filename=time().'.'.$ext;
-            $file->move('assets/uploads/cafecategory'.$filename);
+            $file->move('assets/uploads/cafecategory',$filename);
             $category->image=$filename;
         }
 
