@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h4 class="text-lg font-semibold">Category Page</h4>
+        <h4 class="text-lg font-semibold">Product Page</h4>
     </div>
     <div class="card-body">
         <div class="overflow-x-auto">
@@ -18,18 +18,18 @@
                     </tr>
                 </thead>
                 <tbody class="text-gray-600">
-                    @foreach ($category as $item)
+                    @foreach ($products as $item)
                     <tr class="hover:bg-gray-100">
                         <td class="border px-4 py-2">{{$item->id}}</td>
                         <td class="border px-4 py-2">{{$item->name}}</td>
                         <td class="border px-10 py-2">{{$item->description}}</td>
                         <td class="border px-2 py-2">
                             <div class="flex justify-center">
-                                <img src="{{asset('assets/uploads/cafecategory/'.$item->image)}}" class="w-20" alt="Category Image here">
+                                <img src="{{asset('assets/uploads/cafeproduct/'.$item->image)}}" class="w-20" alt="Category Image here">
                             </div>
                         </td>
                         <td class="border px-2 py-8 flex justify-center">
-                            <a href="{{url('edit-cafecategory/'.$item->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded mr-4">
+                            <a href="{{url('edit-cafeproduct/'.$item->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded mr-4">
                                 Edit
                             </a>
                             <a href="{{url('delete-cafecategory/'.$item->id)}}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded">

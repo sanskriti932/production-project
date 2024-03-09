@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CafeAdmin\FrontendController;
+use App\Http\Controllers\CafeAdmin\CafeCategoryController;
+use App\Http\Controllers\CafeAdmin\CafeProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,12 +32,15 @@ Route::middleware(['auth','isAdmin'])->group(function(){
 
 
 Route::middleware(['auth','isCafeAdmin'])->group(function(){
-    Route::get('/cafedashboard', [App\Http\Controllers\CafeAdmin\FrontendController::class, 'index']);
-    Route::get('cafecategories',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'index']);
-    Route::get('add-cafecategory',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'add']);
-    Route::post('insert-cafecategory',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'insert']);
-    Route::get('edit-cafeproduct/{id}',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'edit']);
-    Route::put('update-cafecategory/{id}',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'update']);
-    Route::get('delete-cafecategory/{id}',[App\Http\Controllers\CafeAdmin\CafeCategoryController::class, 'destroy']);
+    Route::get('/cafedashboard', [FrontendController::class, 'index']);
+    Route::get('cafecategories',[CafeCategoryController::class, 'index']);
+    Route::get('add-cafecategory',[CafeCategoryController::class, 'add']);
+    Route::post('insert-cafecategory',[CafeCategoryController::class, 'insert']);
+    Route::get('edit-cafecategory/{id}',[CafeCategoryController::class, 'edit']);
+    Route::put('update-cafecategory/{id}',[CafeCategoryController::class, 'update']);
+    Route::get('delete-cafecategory/{id}',[CafeCategoryController::class, 'destroy']);
 
+    Route::get('cafeproducts',[CafeProductController::class,'index']);
+    Route::get('add-cafeproduct',[CafeProductController::class,'add']);
+    Route::post('insert-cafeproduct',[CafeProductController::class,'insert']);
 });

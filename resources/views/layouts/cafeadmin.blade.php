@@ -35,7 +35,8 @@
         }
 
         .active-nav-link {
-            background: #1947ee;
+            background: #1947;
+            
         }
 
         .nav-item:hover {
