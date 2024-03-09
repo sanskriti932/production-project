@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class CafeProduct extends Model
 {
@@ -26,4 +27,9 @@ class CafeProduct extends Model
         'meta_keywords',
         'meta_description',
     ];
+    public function cafecategory(){
+        return $this->belongsTo(CafeCategory::class,'cafecate_id','id');
+    }
 }
+
+

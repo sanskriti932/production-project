@@ -11,8 +11,9 @@
                 <thead class="bg-gray-200 text-gray-700">
                     <tr>
                         <th class="px-4 py-2">Id</th>
+                        <th class="px-4 py-2">Category</th>
                         <th class="px-4 py-2">Name</th>
-                        <th class="px-10 py-2">Description</th>
+                        <th class="px-4 py-2">Selling Price</th>
                         <th class="px-2 py-2">Image</th>
                         <th class="px-2 py-2">Action</th>
                     </tr>
@@ -21,8 +22,9 @@
                     @foreach ($products as $item)
                     <tr class="hover:bg-gray-100">
                         <td class="border px-4 py-2">{{$item->id}}</td>
+                        <td class="border px-4 py-2">{{$item->cafecategory->name}}</td>
                         <td class="border px-4 py-2">{{$item->name}}</td>
-                        <td class="border px-10 py-2">{{$item->description}}</td>
+                        <td class="border px-4 py-2">{{$item->selling_price}}</td>
                         <td class="border px-2 py-2">
                             <div class="flex justify-center">
                                 <img src="{{asset('assets/uploads/cafeproduct/'.$item->image)}}" class="w-20" alt="Category Image here">
