@@ -46,7 +46,7 @@ class CafeCategoryController extends Controller
     public function update(Request $request, $id){
         $category = CafeCategory::find($id);
         if($request->hasFile('image')){
-            $path = 'assets/uploads/cafecategory'.$category->image;
+            $path = 'assets/uploads/cafecategory/'.$category->image;
             if(File::exists($path)){
                 File::delete($path);
             }

@@ -43,4 +43,7 @@ Route::middleware(['auth','isCafeAdmin'])->group(function(){
     Route::get('cafeproducts',[CafeProductController::class,'index']);
     Route::get('add-cafeproduct',[CafeProductController::class,'add']);
     Route::post('insert-cafeproduct',[CafeProductController::class,'insert']);
+    Route::get('edit-cafeproduct/{id}',[CafeProductController::class, 'edit']);
+    Route::put('update-cafeproduct/{id}',[CafeProductController::class, 'update']);
+    Route::get('delete-cafeproduct/{id}',[CafeProductController::class, 'destroy']);
 });
