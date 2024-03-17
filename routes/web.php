@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CafeAdmin\FrontendController;
 use App\Http\Controllers\CafeAdmin\CafeCategoryController;
 use App\Http\Controllers\CafeAdmin\CafeProductController;
+use App\Http\Controllers\StationeryAdmin\StationeryFrontendController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,4 +47,9 @@ Route::middleware(['auth','isCafeAdmin'])->group(function(){
     Route::get('edit-cafeproduct/{id}',[CafeProductController::class, 'edit']);
     Route::put('update-cafeproduct/{id}',[CafeProductController::class, 'update']);
     Route::get('delete-cafeproduct/{id}',[CafeProductController::class, 'destroy']);
+});
+
+
+Route::middleware(['auth','isStationeryAdmin'])->group(function(){
+    Route::get('/stationerydashboard', [StationeryFrontendController::class, 'index']);
 });
