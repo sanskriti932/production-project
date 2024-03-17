@@ -56,4 +56,7 @@ Route::middleware(['auth','isStationeryAdmin'])->group(function(){
     Route::get('stationerycategories',[StationeryCategoryController::class, 'index']);
     Route::get('add-stationerycategory',[StationeryCategoryController::class, 'add']);
     Route::post('insert-stationerycategory',[StationeryCategoryController::class, 'insert']);
+    Route::get('edit-stationerycategory/{id}',[StationeryCategoryController::class, 'edit']);
+    Route::put('update-stationerycategory/{id}',[StationeryCategoryController::class, 'update']);
+    Route::get('delete-stationerycategory/{id}',[StationeryCategoryController::class, 'destroy']);
 });
