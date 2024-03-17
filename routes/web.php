@@ -6,6 +6,7 @@ use App\Http\Controllers\CafeAdmin\FrontendController;
 use App\Http\Controllers\CafeAdmin\CafeCategoryController;
 use App\Http\Controllers\CafeAdmin\CafeProductController;
 use App\Http\Controllers\StationeryAdmin\StationeryFrontendController;
+use App\Http\Controllers\StationeryAdmin\StationeryCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,4 +53,5 @@ Route::middleware(['auth','isCafeAdmin'])->group(function(){
 
 Route::middleware(['auth','isStationeryAdmin'])->group(function(){
     Route::get('/stationerydashboard', [StationeryFrontendController::class, 'index']);
+    Route::get('stationerycategories',[StationeryCategoryController::class, 'index']);
 });

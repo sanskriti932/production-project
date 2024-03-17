@@ -3,7 +3,7 @@
         <i class="fas fa-tachometer-alt mr-3"></i>
         Dashboard
     </a>
-    <a href="{{url('cafecategories')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item {{Request::is('cafecategories')?'active-nav-link':''}}">
+    <a href="{{url('stationerycategories')}}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item {{Request::is('cafecategories')?'active-nav-link':''}}">
         <i class="fas fa-sticky-note mr-3"></i>
         Categories
     </a>
