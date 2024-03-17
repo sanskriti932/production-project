@@ -54,4 +54,6 @@ Route::middleware(['auth','isCafeAdmin'])->group(function(){
 Route::middleware(['auth','isStationeryAdmin'])->group(function(){
     Route::get('/stationerydashboard', [StationeryFrontendController::class, 'index']);
     Route::get('stationerycategories',[StationeryCategoryController::class, 'index']);
+    Route::get('add-stationerycategory',[StationeryCategoryController::class, 'add']);
+    Route::post('insert-stationerycategory',[StationeryCategoryController::class, 'insert']);
 });
