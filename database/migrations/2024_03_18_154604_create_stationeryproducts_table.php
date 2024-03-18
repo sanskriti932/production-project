@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('stationeryproducts', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('cafecate_id');
+            $table->bigInteger('stationerycate_id');
             $table->string('name');
             $table->string('slug');
             $table->mediumText('small_description');

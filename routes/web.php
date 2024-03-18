@@ -7,6 +7,7 @@ use App\Http\Controllers\CafeAdmin\CafeCategoryController;
 use App\Http\Controllers\CafeAdmin\CafeProductController;
 use App\Http\Controllers\StationeryAdmin\StationeryFrontendController;
 use App\Http\Controllers\StationeryAdmin\StationeryCategoryController;
+use App\Http\Controllers\StationeryAdmin\StationeryProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,4 +60,6 @@ Route::middleware(['auth','isStationeryAdmin'])->group(function(){
     Route::get('edit-stationerycategory/{id}',[StationeryCategoryController::class, 'edit']);
     Route::put('update-stationerycategory/{id}',[StationeryCategoryController::class, 'update']);
     Route::get('delete-stationerycategory/{id}',[StationeryCategoryController::class, 'destroy']);
+
+    Route::get('stationeryproducts',[StationeryProductController::class,'index']);
 });
