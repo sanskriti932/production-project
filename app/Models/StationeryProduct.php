@@ -26,7 +26,7 @@ class StationeryProduct extends Model
         'meta_keywords',
         'meta_description',
     ];
-    public function cafecategory(){
+    public function stationerycategory(){
         return $this->belongsTo(StationeryCategory::class,'stationerycate_id','id');
     }
 }

@@ -15,7 +15,7 @@
         <i class="fas fa-align-left mr-3"></i>
         Products
     </a>
-    <a href="{{ url('add-cafeproduct') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item {{ Request::is('add-cafeproduct') ? 'active-nav-link' : '' }}">
+    <a href="{{ url('add-stationeryproduct') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item {{ Request::is('add-cafeproduct') ? 'active-nav-link' : '' }}">
         <i class="fas fa-tablet-alt mr-3"></i>
         Add Product
     </a>

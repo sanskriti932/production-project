@@ -62,4 +62,6 @@ Route::middleware(['auth','isStationeryAdmin'])->group(function(){
     Route::get('delete-stationerycategory/{id}',[StationeryCategoryController::class, 'destroy']);
 
     Route::get('stationeryproducts',[StationeryProductController::class,'index']);
+     Route::get('add-stationeryproduct',[StationeryProductController::class,'add']);
+     Route::post('insert-stationeryproduct',[StationeryProductController::class,'insert']);
 });
