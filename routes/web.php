@@ -64,4 +64,6 @@ Route::middleware(['auth','isStationeryAdmin'])->group(function(){
     Route::get('stationeryproducts',[StationeryProductController::class,'index']);
      Route::get('add-stationeryproduct',[StationeryProductController::class,'add']);
      Route::post('insert-stationeryproduct',[StationeryProductController::class,'insert']);
+     Route::get('edit-stationeryproduct/{id}',[StationeryProductController::class, 'edit']);
+    Route::put('update-stationeryproduct/{id}',[StationeryProductController::class, 'update']);
 });
