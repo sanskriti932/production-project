@@ -80,5 +80,14 @@ class StationeryProductController extends Controller
         $products->update();
         return redirect('stationeryproducts')->with('status',"Stationery Product updated sucessfully!");
     }
+    public function destroy($id){
+        $products = StationeryProduct::find($id);
+        $path = 'assets/uploads/stationeryproduct'.$products->image;
+        if(File::exists($path)){
+            File::delete($path);
+        }
+        $products->delete();
+        return redirect('stationeryproducts')->with('status',"Stationery Product deleted sucessfully!");
+    }
 
 }
