@@ -9,6 +9,7 @@ use App\Http\Controllers\StationeryAdmin\StationeryFrontendController;
 use App\Http\Controllers\StationeryAdmin\StationeryCategoryController;
 use App\Http\Controllers\StationeryAdmin\StationeryProductController;
 use App\Http\Controllers\FrontPage\FrontPageController;
+use App\Http\Controllers\CafeFrontend\CafeFrontendController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +36,6 @@ Route::middleware(['auth','isAdmin'])->group(function(){
         return "This is admin";
     });
 });
-
 
 Route::middleware(['auth','isCafeAdmin'])->group(function(){
     Route::get('/cafedashboard', [FrontendController::class, 'index']);
@@ -70,4 +70,9 @@ Route::middleware(['auth','isStationeryAdmin'])->group(function(){
      Route::get('edit-stationeryproduct/{id}',[StationeryProductController::class, 'edit']);
     Route::put('update-stationeryproduct/{id}',[StationeryProductController::class, 'update']);
     Route::get('delete-stationeryproduct/{id}',[StationeryProductController::class, 'destroy']);
+});
+
+
+Route::middleware(['auth','isCafeOpr'])->group(function(){
+    Route::get('/cafehome', [CafeFrontendController::class, 'index']);
 });
