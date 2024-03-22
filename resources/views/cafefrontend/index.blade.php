@@ -10,7 +10,7 @@ Welcome to College Cafè
     <div class="container">
         <div class="row">
             <div class="ml-36">
-            <h2 class="text-justify ml-96 font-bold mb-4">FEATURED CAFE PRODUCTS</h2>
+                <h2 class="text-justify ml-96 font-bold mb-4">FEATURED CAFE PRODUCTS</h2>
             </div>
             <div class="owl-carousel featured-carousel owl-theme">
                 @foreach($featured_products as $prod)
@@ -37,20 +37,22 @@ Welcome to College Cafè
     <div class="container">
         <div class="row">
             <div class="ml-36">
-            <h2 class="text-justify ml-96 font-bold mb-4">TRENDING CAFE CATEGORIES</h2>
+                <h2 class="text-justify ml-96 font-bold mb-4">TRENDING CAFE CATEGORIES</h2>
             </div>
             <div class="owl-carousel featured-carousel owl-theme">
                 @foreach($trending_category as $tcategory)
                 <div class="item">
-                    <div class="card">
-                        <img src="{{asset('assets/uploads/cafecategory/'.$tcategory->image)}}" alt="Product Image">
-                        <div class="card-body">
-                            <h5>
-                                {{$tcategory->name}}
-                            </h5>
-                            <p>{{$tcategory->description}}</p>
+                    <a href="{{url('view-cafecategory/'.$tcategory->slug)}}">
+                        <div class="card">
+                            <img src="{{asset('assets/uploads/cafecategory/'.$tcategory->image)}}" alt="Product Image">
+                            <div class="card-body">
+                                <h5>
+                                    {{$tcategory->name}}
+                                </h5>
+                                <p>{{$tcategory->description}}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 @endforeach
             </div>

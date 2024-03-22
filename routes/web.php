@@ -76,4 +76,5 @@ Route::middleware(['auth','isStationeryAdmin'])->group(function(){
 Route::middleware(['auth','isCafeOpr'])->group(function(){
     Route::get('/cafehome', [CafeFrontendController::class, 'index']);
     Route::get('cafecategory',[CafeFrontendController::class, 'category']);
+    Route::get('view-cafecategory/{slug}',[CafeFrontendController::class, 'viewcategory']);
 });

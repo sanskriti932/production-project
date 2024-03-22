@@ -19,4 +19,14 @@ class CafeFrontendController extends Controller
         $category=CafeCategory::where('status','0')->get();
         return view('cafefrontend.category',compact('category'));
     }
+
+    public function viewcategory($slug){
+        if(CafeCategory::where('slug',$slug)->exists()){
+            $category=CafeCategory::where('slug',$slug)->first();
+            $products=CafeProduct::where('cafecate_id',$category->id)->where('status','0')->get();
+            return view('cafefrontend.products.index',compact('category','products'));
+        }else{
+            return redirect('cafehome')->with('status',"Slug doesnot exist!");
+        }
+    }
 }
