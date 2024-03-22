@@ -14,7 +14,7 @@
                 </div>
                 <div class="flex -mx-2 mb-4">
                     @if($products->qty>0)
-                    
+
                     <div class="w-1/2 px-2">
                         <button class="w-full ml-32 addToCartBtn bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">
                             Add to Cart
@@ -48,13 +48,13 @@
                 <div class="mb-4">
                     <h3 class="text-lg font-bold text-gray-700 dark:text-gray-300 mb-2">Availability:</h3>
                     @if($products->qty > 0)
-                        <label class="badge bg-success">
-                            <p class="text-white-600 dark:text-gray-300">In Stock</p>
-                        </label>
+                    <label class="badge bg-success">
+                        <p class="text-white-600 dark:text-gray-300">In Stock</p>
+                    </label>
                     @else
-                        <label class="badge bg-danger">
-                            <p class="text-white-600 dark:text-gray-300">Out of Stock</p>
-                        </label>
+                    <label class="badge bg-danger">
+                        <p class="text-white-600 dark:text-gray-300">Out of Stock</p>
+                    </label>
                     @endif
                 </div>
 
@@ -80,3 +80,32 @@
 </div>
 @endsection
 
+@section('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.increment-btn').click(function(e) {
+            e.preventDefault();
+
+            var inc_value = $('.qty-input').val();
+            var value = parseInt(inc_value, 10);
+            value = isNaN(value) ? 0 : value;
+            if (value < 10) {
+                value++;
+                $('.qty-input').val(value);
+            }
+        });
+        $('.decrement-btn').click(function(e) {
+            e.preventDefault();
+
+            var dec_value = $('.qty-input').val();
+            var value = parseInt(dec_value, 10);
+            value = isNaN(value) ? 0 : value;
+            if (value > 1) {
+                value--;
+                $('.qty-input').val(value);
+            }
+        });
+    });
+</script>
+@endsection
