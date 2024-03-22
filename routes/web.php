@@ -8,6 +8,7 @@ use App\Http\Controllers\CafeAdmin\CafeProductController;
 use App\Http\Controllers\StationeryAdmin\StationeryFrontendController;
 use App\Http\Controllers\StationeryAdmin\StationeryCategoryController;
 use App\Http\Controllers\StationeryAdmin\StationeryProductController;
+use App\Http\Controllers\FrontPage\FrontPageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,8 @@ use App\Http\Controllers\StationeryAdmin\StationeryProductController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/newhome', [FrontPageController::class, 'index']);
 
 Auth::routes();
 
