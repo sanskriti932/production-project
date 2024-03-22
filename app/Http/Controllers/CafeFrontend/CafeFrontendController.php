@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\CafeFrontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\CafeCategory;
 use App\Models\CafeProduct;
 use Illuminate\Http\Request;
 
@@ -10,6 +11,12 @@ class CafeFrontendController extends Controller
 {
     public function index(){
         $featured_products=CafeProduct::where('trending',1)->take(5)->get();
-        return view('cafefrontend.index',compact('featured_products'));
+        $trending_category=CafeCategory::where('popular',1)->take(5)->get();
+        return view('cafefrontend.index',compact('featured_products','trending_category'));
+    }
+
+    public function category(){
+        $category=CafeCategory::where('status','0')->get();
+        return view('cafefrontend.category',compact('category'));
     }
 }

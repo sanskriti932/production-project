@@ -28,7 +28,32 @@ Welcome to College Cafè
                 </div>
                 @endforeach
             </div>
+        </div>
+    </div>
+</div>
 
+
+<div class="py-5 mr-6 ml-6">
+    <div class="container">
+        <div class="row">
+            <div class="ml-36">
+            <h2 class="text-justify ml-96 font-bold mb-4">TRENDING CAFE CATEGORIES</h2>
+            </div>
+            <div class="owl-carousel featured-carousel owl-theme">
+                @foreach($trending_category as $tcategory)
+                <div class="item">
+                    <div class="card">
+                        <img src="{{asset('assets/uploads/cafecategory/'.$tcategory->image)}}" alt="Product Image">
+                        <div class="card-body">
+                            <h5>
+                                {{$tcategory->name}}
+                            </h5>
+                            <p>{{$tcategory->description}}</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
         </div>
     </div>
 </div>
