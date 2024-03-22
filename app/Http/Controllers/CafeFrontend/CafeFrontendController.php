@@ -29,4 +29,17 @@ class CafeFrontendController extends Controller
             return redirect('cafehome')->with('status',"Slug doesnot exist!");
         }
     }
+    public function productview($cate_slug,$prod_slug){
+        if(CafeCategory::where('slug',$cate_slug)->exists()){
+            if(CafeProduct::where('slug',$prod_slug)->exists()){
+                $products = CafeProduct::where('slug',$prod_slug)->first();
+                return view('cafefrontend.products.view',compact('products'));
+            }
+            else{
+                return redirect('cafehome')->with('status',"Broken link encountered!");
+            }
+        }else{
+            return redirect('cafehome')->with('status',"Broken link encountered!");
+        }  
+    }
 }

@@ -42,7 +42,7 @@ Welcome to College Cafè
             <div class="owl-carousel featured-carousel owl-theme">
                 @foreach($trending_category as $tcategory)
                 <div class="item">
-                    <a href="{{url('view-cafecategory/'.$tcategory->slug)}}">
+                    <a href="{{url('cafecategory/'.$tcategory->slug)}}">
                         <div class="card">
                             <img src="{{asset('assets/uploads/cafecategory/'.$tcategory->image)}}" alt="Product Image">
                             <div class="card-body">

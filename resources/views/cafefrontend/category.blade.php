@@ -14,7 +14,7 @@ Category Cafe
                 <div class="row">
                     @foreach($category as $cate)
                     <div class="col-md-3 mb-3">
-                        <a href="{{url('view-cafecategory/'.$cate->slug)}}">
+                        <a href="{{url('cafecategory/'.$cate->slug)}}">
                             <div class="card">
                                 <img src="{{asset('assets/uploads/cafecategory/'.$cate->image)}}" alt="Category Image">
                                 <div class="card-body">
