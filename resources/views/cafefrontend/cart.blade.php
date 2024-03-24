@@ -6,46 +6,42 @@ Cafe Cart
 @section('content')
 <div class="py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="ml-36">
-                    <h2 class="text-justify ml-96 font-bold mb-4">Cafe Cart</h2>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
-                    @foreach($cartitems as $item)
-                    <div class="mb-3 product_data">
-                        <div class="card relative">
-                            <img src="{{asset('assets/uploads/cafeproduct/'.$item->cafeproducts->image)}}" alt="Category Image" class="w-full">
-                            <div class="card-body flex flex-col justify-between">
-                                <div>
-                                    <h5 class="font-bold text-lg">{{$item->cafeproducts->name}}</h5>
-                                    <div class="flex items-center mt-2">
-                                        <input type="hidden" class="prod_id" value="{{$item->cafeprod_id}}">
-                                        <p class="text-gray-700 dark:text-gray-300">Quantity:</p>
-                                        <div class="flex items-center ml-auto">
-                                            <button class="input-group-text decrement-btn">-</button>
-                                            <input type="text" name="quantity" value="{{$item->cafeprod_qty}}" class="form-control w-16 text-center qty-input" />
-                                            <button class="input-group-text increment-btn">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ml-auto mt-80 absolute top-0 right-0">
-                                    <button class="delete-cart-item">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red" viewBox="0 0 1408 1536">
-                                            <path d="M512 1248V544q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23m256 0V544q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23m256 0V544q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23M480 256h448l-48-117q-7-9-17-11H546q-10 2-17 11zm928 32v64q0 14-9 23t-23 9h-96v948q0 83-47 143.5t-113 60.5H288q-66 0-113-58.5T128 1336V384H32q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h309l70-167q15-37 54-63t79-26h320q40 0 79 26t54 63l70 167h309q14 0 23 9t9 23" />
-                                        </svg>
-                                    </button>
-                                </div>
+        <h2 class="text-center font-bold text-3xl mb-4">Cafe Cart</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+            @foreach($cartitems as $item)
+            <div class="mb-3 product_data">
+                <div class="card relative">
+                    <img src="{{asset('assets/uploads/cafeproduct/'.$item->cafeproducts->image)}}" alt="Category Image" class="w-full">
+                    <div class="card-body flex flex-col justify-between">
+                        <div class="card-body flex justify-between items-center">
+                            <h5 class="font-bold text-lg -ml-3">{{$item->cafeproducts->name}}</h5>
+                            <div class="delete-btn-container ml-auto">
+                            <button class="delete-cart-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" viewBox="0 0 1408 1536">
+                                        <path d="M512 1248V544q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23m256 0V544q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23m256 0V544q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23M480 256h448l-48-117q-7-9-17-11H546q-10 2-17 11zm928 32v64q0 14-9 23t-23 9h-96v948q0 83-47 143.5t-113 60.5H288q-66 0-113-58.5T128 1336V384H32q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h309l70-167q15-37 54-63t79-26h320q40 0 79 26t54 63l70 167h309q14 0 23 9t9 23" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex items-center mt-2">
+                            <input type="hidden" class="prod_id" value="{{$item->cafeprod_id}}">
+                            <p class="font-bold text-lg">Quantity:</p>
+                            <div class="flex items-center ml-auto">
+                                <button class="border border-gray-300 rounded-md px-2 py-1 decrement-btn">-</button>
+                                <input type="text" name="quantity" value="{{$item->cafeprod_qty}}" class="border border-gray-300 rounded-md w-16 text-center px-2 py-1 qty-input" />
+                                <button class="border border-gray-300 rounded-md px-2 py-1 increment-btn">+</button>
                             </div>
                         </div>
                     </div>
-                    @endforeach
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </div>
 @endsection
+
+
 @section('scripts')
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script>
