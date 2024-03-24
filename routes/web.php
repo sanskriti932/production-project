@@ -83,4 +83,5 @@ Route::middleware(['auth','isCafeOpr'])->group(function(){
     Route::post('add-to-cafecart',[CafeCartController::class,'addProduct']);
     Route::get('cart',[CafeCartController::class,'viewcart']);
     Route::post('delete-cart-item',[CafeCartController::class,'deleteProduct']);
+    Route::post('update-cafecart',[CafeCartController::class,'updatecart']);
 });

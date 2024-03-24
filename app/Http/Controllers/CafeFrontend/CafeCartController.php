@@ -38,6 +38,18 @@ class CafeCartController extends Controller
         return view('cafefrontend.cart',compact('cartitems'));
         
     }
+    public function updatecart(Request $request){
+        $prod_id=$request->input('prod_id');
+        $product_qty=$request->input('prod_qty');
+        if(Auth::check()){
+            if(CafeCart::where('cafeprod_id',$prod_id)->where('user_id',Auth::id())->exists()){
+                $cart=CafeCart::where('cafeprod_id',$prod_id)->where('user_id',Auth::id())->first();
+                $cart->cafeprod_qty=$product_qty;
+                $cart->update();
+                return response()->json(['status'=>"Quantity Updated"]);
+            }
+        }
+    }
     public function deleteProduct(Request $request)
     {
         if (Auth::check()) {
@@ -51,4 +63,5 @@ class CafeCartController extends Controller
             return response()->json(['status' => "Login to continue further!"]);
         }
     }
+    
 }
