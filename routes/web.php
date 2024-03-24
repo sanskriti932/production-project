@@ -10,6 +10,7 @@ use App\Http\Controllers\StationeryAdmin\StationeryCategoryController;
 use App\Http\Controllers\StationeryAdmin\StationeryProductController;
 use App\Http\Controllers\FrontPage\FrontPageController;
 use App\Http\Controllers\CafeFrontend\CafeFrontendController;
+use App\Http\Controllers\CafeFrontend\CafeCartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -78,4 +79,8 @@ Route::middleware(['auth','isCafeOpr'])->group(function(){
     Route::get('cafecategory',[CafeFrontendController::class, 'category']);
     Route::get('cafecategory/{slug}',[CafeFrontendController::class, 'viewcategory']);
     Route::get('cafecategory/{cate_slug}/{prod_slug}',[CafeFrontendController::class, 'productview']);
+
+    Route::post('add-to-cafecart',[CafeCartController::class,'addProduct']);
+    Route::get('cart',[CafeCartController::class,'viewcart']);
+    Route::post('delete-cart-item',[CafeCartController::class,'deleteProduct']);
 });
