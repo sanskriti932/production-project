@@ -89,4 +89,5 @@ Route::middleware(['auth','isCafeOpr'])->group(function(){
 
 Route::middleware(['auth','isStationeryOpr'])->group(function(){
     Route::get('/stationeryhome',[StationeryHomeFrontend::class,'index']);
+    Route::get('stationerycategory',[StationeryHomeFrontend::class,'category']);
 });
