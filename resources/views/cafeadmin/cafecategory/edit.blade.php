@@ -16,7 +16,7 @@
                 </div>
                 <div>
                     <label for="slug" class="block text-sm font-medium text-gray-700">Slug</label>
-                    <input type="text"  value="{{$category->slug}}" id="slug" name="slug" class="form-input mt-1 px-3 py-2 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <input type="text" value="{{$category->slug}}" id="slug" name="slug" class="form-input mt-1 px-3 py-2 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 </div>
                 <div class="col-span-2">
                     <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-span-2">
                     <label for="meta_title" class="block text-sm font-medium text-gray-700">Meta Title</label>
-                    <input type="text"  value="{{$category->meta_title}}" id="meta_title" name="meta_title" class="form-input mt-1 px-3 py-2 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                    <input type="text" value="{{$category->meta_title}}" id="meta_title" name="meta_title" class="form-input mt-1 px-3 py-2 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 </div>
                 <div class="col-span-2">
                     <label for="meta_keywords" class="block text-sm font-medium text-gray-700">Meta Keywords</label>
@@ -42,20 +42,16 @@
                     <label for="meta_description" class="block text-sm font-medium text-gray-700">Meta Description</label>
                     <textarea name="meta_description" id="meta_description" rows="3" class="form-textarea mt-1 px-3 py-2 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">{{$category->meta_description}}</textarea>
                 </div>
-                
                 @if($category->image)
-                    <img src="{{asset('assets/uploads/cafecategory/'.$category->image)}}" alt="Cafe Category Image">
+                <img src="{{asset('assets/uploads/cafecategory/'.$category->image)}}" alt="Category Image Saved">
                 @endif
-                <div class="col-span-2">
+                <div class="mb-4 col-span-2">
                     <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
-                    <input type="file" id="image" name="image" class="form-input mt-1 w-full">
+                    <input type="file" id="image" name="image" class="form-input mt-1 block w-full">
                 </div>
                 <div class="col-span-2">
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                        Submit
-                    </button>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
                 </div>
-
             </div>
         </form>
     </div>

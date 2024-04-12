@@ -43,10 +43,11 @@ class CafeCategoryController extends Controller
         return view('cafeadmin.cafecategory.edit',compact('category'));
     }
 
-    public function update(Request $request, $id){
-        $category = CafeCategory::find($id);
-        if($request->hasFile('image')){
-            $path = 'assets/uploads/cafecategory/'.$category->image;
+    public function update(Request $request,$id){
+        $category=CafeCategory::find($id);
+        if($request->hasFile('image'))
+        {
+            $path='assets/uploads/cafecategory/'.$category->image;
             if(File::exists($path)){
                 File::delete($path);
             }
@@ -56,16 +57,17 @@ class CafeCategoryController extends Controller
             $file->move('assets/uploads/cafecategory',$filename);
             $category->image=$filename;
         }
-        $category->name=$request->input('name');
-        $category->slug=$request->input('slug');
-        $category->description=$request->input('description');
-        $category->status=$request->input('status')==TRUE ? '1':'0';
-        $category->popular=$request->input('popular') ==TRUE ? '1':'0';
-        $category->meta_title=$request->input('meta_title');
-        $category->meta_keywords=$request->input('meta_keywords');
-        $category->meta_description=$request->input('meta_description');
+        $category->name = $request->input('name');
+        $category->slug = $request->input('slug');
+        $category->description = $request->input('description');
+        $category->status = $request->input('status') == TRUE ? '1' : '0';
+        $category->popular = $request->input('popular') == TRUE ? '1' : '0';
+        $category->meta_title = $request->input('meta_title');
+        $category->meta_keywords = $request->input('meta_keywords');
+        $category->meta_description= $request->input('meta_description');
+
         $category->update();
-        return redirect('/cafedashboard')->with('status',"Cafe Category updated sucessfully!");
+        return redirect('/cafedashboard')->with('status', "Category updated successfully!");
     }
 
     public function destroy($id){

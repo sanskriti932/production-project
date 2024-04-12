@@ -105,7 +105,6 @@ Cafe Cart
                         // Reload the page after the SweetAlert
                         window.location.reload();
                     });
-                    // Corrected 'success' here
                 }
             });
         });

@@ -11,7 +11,7 @@ class CafeFrontendController extends Controller
 {
     public function index(){
         $featured_products=CafeProduct::where('trending',1)->take(5)->get();
-        $trending_category=CafeCategory::where('popular',1)->take(5)->get();
+        $trending_category=CafeCategory::where('popular',1)->take(7)->get();
         return view('cafefrontend.index',compact('featured_products','trending_category'));
     }
 
