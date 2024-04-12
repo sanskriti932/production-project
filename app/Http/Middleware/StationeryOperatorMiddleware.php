@@ -20,7 +20,7 @@ class StationeryOperatorMiddleware
             if(Auth::user()->role_as =='5'){
                 return $next($request);
             }else{
-                return redirect('/home')->with('status','Acess Denied! You are not a stationery operator.');
+                return redirect('/home')->with('status','Acess Denied! You are not a stationery operator');
             }
         }else{
             return redirect('/home')->with('status','Please login first!');

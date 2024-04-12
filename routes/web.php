@@ -11,6 +11,7 @@ use App\Http\Controllers\StationeryAdmin\StationeryProductController;
 use App\Http\Controllers\FrontPage\FrontPageController;
 use App\Http\Controllers\CafeFrontend\CafeFrontendController;
 use App\Http\Controllers\CafeFrontend\CafeCartController;
+use App\Http\Controllers\StationeryFrontend\StationeryHomeFrontend;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,5 +88,5 @@ Route::middleware(['auth','isCafeOpr'])->group(function(){
 });
 
 Route::middleware(['auth','isStationeryOpr'])->group(function(){
-    Route::get('/stationeryhome',[StationeryFrontendController::class,'index']);
+    Route::get('/stationeryhome',[StationeryHomeFrontend::class,'index']);
 });

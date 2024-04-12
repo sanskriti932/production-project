@@ -44,6 +44,10 @@ class LoginController extends Controller
         {
             return redirect('cafehome')->with('status','Welcome to College Cafe!');
         }
+        else if(Auth::user()->role_as=='5')
+        {
+            return redirect('stationeryhome')->with('status','Welcome to College Stationery!');
+        }
         elseif(Auth::user()->role_as=='0')
         {
             return redirect('/')->with('status','Logged in successfully!');
