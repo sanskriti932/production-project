@@ -85,3 +85,7 @@ Route::middleware(['auth','isCafeOpr'])->group(function(){
     Route::post('delete-cart-item',[CafeCartController::class,'deleteProduct']);
     Route::post('update-cafecart',[CafeCartController::class,'updatecart']);
 });
+
+Route::middleware(['auth','isStationeryOpr'])->group(function(){
+    Route::get('/stationeryhome',[StationeryFrontendController::class,'index']);
+});

@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
         'isCafeAdmin' =>\App\Http\Middleware\CafeAdminMiddleware::class,
         'isStationeryAdmin' =>\App\Http\Middleware\StationeryAdminMiddleware::class,
         'isCafeOpr'=>\App\Http\Middleware\CafeOperatorMiddleware::class,
+        'isStationeryOpr'=>\App\Http\Middleware\StationeryOperatorMiddleware::class,
     ];
 }
