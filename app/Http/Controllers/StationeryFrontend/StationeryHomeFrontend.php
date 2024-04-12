@@ -18,4 +18,26 @@ class StationeryHomeFrontend extends Controller
         $category=StationeryCategory::where('status','0')->get();
         return view('stationeryfrontend.category',compact('category'));
     }
+    public function viewcategory($slug){
+        if(StationeryCategory::where('slug',$slug)->exists()){
+            $category=StationeryCategory::where('slug',$slug)->first();
+            $products=StationeryProduct::where('cate_id',$category->id)->where('status','0')->get();
+            return view('stationeryfrontend.products.index',compact('category','products'));
+        }else{
+            return redirect('stationeryhome')->with('status',"Slug doesnot exist!");
+        }
+    }
+    public function productview($cate_slug,$prod_slug){
+        if(StationeryCategory::where('slug',$cate_slug)->exists()){
+            if(StationeryProduct::where('slug',$prod_slug)->exists()){
+                $products = StationeryProduct::where('slug',$prod_slug)->first();
+                return view('stationeryfrontend.products.view',compact('products'));
+            }
+            else{
+                return redirect('stationeryhome')->with('status',"Broken link encountered!");
+            }
+        }else{
+            return redirect('stationeryhome')->with('status',"Broken link encountered!");
+        }  
+    }
 }
