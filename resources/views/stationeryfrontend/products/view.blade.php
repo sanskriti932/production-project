@@ -96,7 +96,7 @@
 
             $.ajax({
                 method:"POST",
-                url:"/add-to-cafecart",
+                url:"/add-to-stationerycart",
                 data:{
                    'product_id':product_id,
                    'product_qty':product_qty,

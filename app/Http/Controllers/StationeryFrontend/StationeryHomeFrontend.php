@@ -21,7 +21,7 @@ class StationeryHomeFrontend extends Controller
     public function viewcategory($slug){
         if(StationeryCategory::where('slug',$slug)->exists()){
             $category=StationeryCategory::where('slug',$slug)->first();
-            $products=StationeryProduct::where('cate_id',$category->id)->where('status','0')->get();
+            $products=StationeryProduct::where('stationerycate_id',$category->id)->where('status','0')->get();
             return view('stationeryfrontend.products.index',compact('category','products'));
         }else{
             return redirect('stationeryhome')->with('status',"Slug doesnot exist!");
