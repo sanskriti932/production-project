@@ -55,4 +55,9 @@ class CafeFrontendController extends Controller
                 return redirect('cafehome')->with('status',"Broken link encountered!");
             } 
     }
+
+    public function search(Request $request){
+        $data=CafeProduct::where('name','like','%'.$request->input('query').'%')->get();
+        return view('cafefrontend.search',['products'=>$data]);
+    }
 }

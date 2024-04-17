@@ -83,6 +83,7 @@ Route::middleware(['auth','isCafeOpr'])->group(function(){
     Route::get('cafecategory/{cate_slug}/{prod_slug}',[CafeFrontendController::class, 'productview']);
     Route::get('cafeproduct',[CafeFrontendController::class, 'product']);
     Route::get('cafeproduct/{prod_slug}',[CafeFrontendController::class, 'productonlyview']);
+    Route::get('search',[CafeFrontendController::class, 'search']);
 
     Route::post('add-to-cafecart',[CafeCartController::class,'addProduct']);
     Route::get('cart',[CafeCartController::class,'viewcart']);
