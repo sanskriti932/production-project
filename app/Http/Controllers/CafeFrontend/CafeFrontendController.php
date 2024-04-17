@@ -19,7 +19,10 @@ class CafeFrontendController extends Controller
         $category=CafeCategory::where('status','0')->get();
         return view('cafefrontend.category',compact('category'));
     }
-
+    public function product(){
+        $product=CafeProduct::where('status','0')->get();
+        return view('cafefrontend.product',compact('product'));
+    }
     public function viewcategory($slug){
         if(CafeCategory::where('slug',$slug)->exists()){
             $category=CafeCategory::where('slug',$slug)->first();
@@ -41,5 +44,15 @@ class CafeFrontendController extends Controller
         }else{
             return redirect('cafehome')->with('status',"Broken link encountered!");
         }  
+    }
+
+    public function productonlyview($prod_slug){
+            if(CafeProduct::where('slug',$prod_slug)->exists()){
+                $products = CafeProduct::where('slug',$prod_slug)->first();
+                return view('cafefrontend.products.view',compact('products'));
+            }
+            else{
+                return redirect('cafehome')->with('status',"Broken link encountered!");
+            } 
     }
 }
