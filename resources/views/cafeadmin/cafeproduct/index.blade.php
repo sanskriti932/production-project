@@ -30,7 +30,7 @@
                                 <img src="{{asset('assets/uploads/cafeproduct/'.$item->image)}}" class="w-20" alt="Category Image here">
                             </div>
                         </td>
-                        <td class="border px-2 py-8 flex justify-center">
+                        <td class="border px-2 py-12 flex justify-center">
                             <a href="{{url('edit-cafeproduct/'.$item->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded mr-4">
                                 Edit
                             </a>

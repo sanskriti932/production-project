@@ -54,7 +54,7 @@
                 </div>
                 <div>
                     <label for="popular" class="block text-sm font-medium text-gray-700">Popular</label>
-                    <input type="checkbox" id="popular" name="popular" {{ $products->popular == "1" ? 'checked' : '' }} class="form-checkbox mt-1">
+                    <input type="checkbox" id="popular" name="trending" {{ $products->trending == "1" ? 'checked' : '' }} class="form-checkbox mt-1">
                 </div>
                 <div class="col-span-2">
                     <label for="meta_title" class="block text-sm font-medium text-gray-700">Meta Title</label>
