@@ -12,18 +12,17 @@ Welcome to College Cafè
                 Discover Our Delicacies
             </h1>
             <h2 class="text-4xl text-gray-800 font-extrabold md:text-5xl">
-                Elevate Your Style with Our Fashion Collections
+            Indulge Your Palate with Our Café Creations
             </h2>
             <p>
-                Explore a world of fashion and express your unique style. Find the perfect outfits that resonate with
-                your personality and make a statement wherever you go.
+            Embark on a delightful culinary journey and tantalize your taste buds with our exquisite café creations. Explore a world of flavors and savor each moment as you indulge in our handcrafted beverages and delectable treats.
             </p>
             <div class="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
-                <a href="{{ url('all-product') }}" class="block py-2 px-4 text-center text-white font-medium  duration-150  rounded-lg shadow-lg hover:shadow-none" style="background-color: #ab733f;">
-                    Start Shopping
+                <a href="{{ url('cafeproduct') }}" class="block py-2 px-4 text-center text-white font-medium  duration-150  rounded-lg shadow-lg hover:shadow-none" style="background-color: #ab733f;">
+                    Browse Cafe
                 </a>
-                <a href="{{ url('register') }}" class="flex items-center justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded-lg md:inline-flex">Exclusive
-                    Access
+                <a href="{{ url('cafecategory') }}" class="flex items-center justify-center gap-x-2 py-2 px-4 text-gray-700 hover:text-gray-500 font-medium duration-150 active:bg-gray-100 border rounded-lg md:inline-flex">
+                    Cafe Delicacies
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                         <path fill-rule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clip-rule="evenodd"></path>
                     </svg>
