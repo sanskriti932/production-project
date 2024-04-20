@@ -40,4 +40,8 @@ class StationeryHomeFrontend extends Controller
             return redirect('stationeryhome')->with('status',"Broken link encountered!");
         }  
     }
+    public function search(Request $request){
+        $data=StationeryProduct::where('name','like','%'.$request->input('query').'%')->get();
+        return view('stationeryfrontend.search',['products'=>$data]);
+    }
 }
