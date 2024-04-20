@@ -96,6 +96,8 @@ Route::middleware(['auth','isStationeryOpr'])->group(function(){
     Route::get('stationerycategory',[StationeryHomeFrontend::class,'category']);
     Route::get('stationerycategory/{slug}',[StationeryHomeFrontend::class, 'viewcategory']);
     Route::get('stationerycategory/{cate_slug}/{prod_slug}',[StationeryHomeFrontend::class, 'productview']);
+    Route::get('stationeryproduct',[StationeryHomeFrontend::class, 'product']);
+    Route::get('stationeryproduct/{prod_slug}',[StationeryHomeFrontend::class, 'productonlyview']);
     Route::get('searchstationery',[StationeryHomeFrontend::class, 'search']);
 
     Route::post('add-to-stationerycart',[StationeryCartController::class,'addProduct']);

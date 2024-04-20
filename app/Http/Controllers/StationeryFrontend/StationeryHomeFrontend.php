@@ -18,6 +18,10 @@ class StationeryHomeFrontend extends Controller
         $category=StationeryCategory::where('status','0')->get();
         return view('stationeryfrontend.category',compact('category'));
     }
+    public function product(){
+        $product=StationeryProduct::where('status','0')->get();
+        return view('stationeryfrontend.product',compact('product'));
+    }
     public function viewcategory($slug){
         if(StationeryCategory::where('slug',$slug)->exists()){
             $category=StationeryCategory::where('slug',$slug)->first();
@@ -39,6 +43,15 @@ class StationeryHomeFrontend extends Controller
         }else{
             return redirect('stationeryhome')->with('status',"Broken link encountered!");
         }  
+    }
+    public function productonlyview($prod_slug){
+        if(StationeryProduct::where('slug',$prod_slug)->exists()){
+            $products = StationeryProduct::where('slug',$prod_slug)->first();
+            return view('stationeryfrontend.products.view',compact('products'));
+        }
+        else{
+            return redirect('stationeryhome')->with('status',"Broken link encountered!");
+        } 
     }
     public function search(Request $request){
         $data=StationeryProduct::where('name','like','%'.$request->input('query').'%')->get();
