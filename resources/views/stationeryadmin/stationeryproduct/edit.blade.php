@@ -69,7 +69,7 @@
                     <textarea name="meta_description" id="meta_description" rows="3"  class="form-textarea mt-1 px-3 py-2 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">{{$products->meta_description}}</textarea>
                 </div>
                 @if($products->image)
-                    <img src="{{asset('assets/uploads/cafeproduct/'.$products->image)}}" alt="Cafe Product Image">
+                    <img src="{{asset('assets/uploads/stationeryproduct/'.$products->image)}}" alt="Cafe Product Image">
                 @endif
                 <div class="col-span-2">
                     <label for="image" class="block text-sm font-medium text-gray-700">Image</label>

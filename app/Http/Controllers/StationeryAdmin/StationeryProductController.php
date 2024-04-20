@@ -39,7 +39,7 @@ class StationeryProductController extends Controller
         $products->tax=$request->input('tax');
         $products->qty=$request->input('qty');
         $products->status=$request->input('status')==TRUE?'1':'0';
-        $products->trending=$request->input('trending')==TRUE?'1':'0';
+        $products->trending=$request->input('popular')==TRUE?'1':'0';
         $products->meta_title=$request->input('meta_title');
         $products->meta_keywords=$request->input('meta_keywords');
         $products->meta_description=$request->input('meta_description');
@@ -73,7 +73,7 @@ class StationeryProductController extends Controller
         $products->tax=$request->input('tax');
         $products->qty=$request->input('qty');
         $products->status=$request->input('status')==TRUE?'1':'0';
-        $products->trending=$request->input('trending')==TRUE?'1':'0';
+        $products->trending=$request->input('popular')==TRUE?'1':'0';
         $products->meta_title=$request->input('meta_title');
         $products->meta_keywords=$request->input('meta_keywords');
         $products->meta_description=$request->input('meta_description');

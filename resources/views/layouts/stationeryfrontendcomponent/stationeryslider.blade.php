@@ -1,13 +1,13 @@
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{{asset('/img/images.jpeg')}}" class="d-block w-100 h-1/6" alt="...">
+      <img src="{{asset('/img/StationerySlider1.jpg')}}" class="d-block w-100 h-1/6" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="{{asset('/img/images-2.jpeg')}}" class="d-block w-100" alt="...">
+      <img src="{{asset('/img/StationerySlider2.jpg')}}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="{{asset('/img/images.jpeg')}}" class="d-block w-100" alt="...">
+      <img src="{{asset('/img/StationerySlider3.jpg')}}" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
