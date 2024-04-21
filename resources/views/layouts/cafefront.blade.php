@@ -26,7 +26,7 @@
 <body class="bg-gray-100 font-family-imbue flex flex-col min-h-screen">
     <header class="header sticky top-0 bg-white shadow-md flex items-center justify-between px-8 py-2 z-50">
         <h1 class="w-3/12 lg:w-1/12">
-            <a href="{{ url('/') }}">
+            <a href="{{ url('/cafehome') }}">
                 <img class="w-20 h-20" src="{{asset('img/ACCESSORIES-removebg-preview.png')}}" alt="App Logo">
             </a>
         </h1>

@@ -46,7 +46,7 @@ class CafeCartController extends Controller
                 $cart=CafeCart::where('cafeprod_id',$prod_id)->where('user_id',Auth::id())->first();
                 $cart->cafeprod_qty=$product_qty;
                 $cart->update();
-                return response()->json(['status'=>"Quantity Updated"]);
+                return response()->json(['status'=>" Quantity Updated"]);
             }
         }
     }
@@ -62,6 +62,5 @@ class CafeCartController extends Controller
         } else {
             return response()->json(['status' => "Login to continue further!"]);
         }
-    }
-    
+    }   
 }
