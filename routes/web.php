@@ -14,6 +14,7 @@ use App\Http\Controllers\CafeFrontend\CafeCartController;
 use App\Http\Controllers\CafeFrontend\CafeCheckoutController;
 use App\Http\Controllers\StationeryFrontend\StationeryHomeFrontend;
 use App\Http\Controllers\StationeryFrontend\StationeryCartController;
+use App\Http\Controllers\StationeryFrontend\StationeryCheckoutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -107,4 +108,6 @@ Route::middleware(['auth','isStationeryOpr'])->group(function(){
     Route::get('stationerycart',[StationeryCartController::class,'viewcart']);
     Route::post('delete-cart-item',[StationeryCartController::class,'deleteProduct']);
     Route::post('update-stationerycart',[StationeryCartController::class,'updatecart']);
+
+    Route::get('stationerycheckout',[StationeryCheckoutController::class,'index']);
 });
