@@ -24,4 +24,4 @@ Search - CollegeCafe!
         </div>
     </div>
 </div>
-    @endsection
+@endsection

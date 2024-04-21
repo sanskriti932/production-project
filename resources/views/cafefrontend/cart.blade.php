@@ -46,7 +46,7 @@ Cafe Cart
             <h6 class="flex justify-between items-center">
                 <span class="text-gray-600 font-semibold">Cart Totals</span>
                 <span class="text-green-500 font-semibold">Total Price: Rs {{$total}}</span>
-                <button class="btn btn-success">Proceed to checkout</button>
+                <button class="btn btn-success"> <a href="{{url('cafecheckout')}}">Proceed to checkout</a></button>
             </h6>
         </div>
     </div>
